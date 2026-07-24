@@ -27,7 +27,7 @@ POST /api/webhook
 Dashboard: /  (Reviews | Stats | Repos | Demo review)
 ```
 
-## Design decisions (interview talking points)
+## Design
 
 1. **HMAC-SHA256 webhook verification, timing-safe.** `crypto.timingSafeEqual` prevents
    timing attacks that could allow an attacker to forge the secret bit-by-bit. This is
