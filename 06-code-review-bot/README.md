@@ -1,4 +1,4 @@
-# 🤖 ReviewBot — AI Code Review Bot
+# ReviewBot — AI Code Review Bot
 
 Automated AI-powered code review for GitHub pull requests for fictional engineering team
 **CodeAtlas**. Receives GitHub App webhooks, parses unified diffs, runs GPT-4o-mini
