@@ -1,0 +1,41 @@
+# .reviewbot.yml — place this file in the root of your repository.
+# ReviewBot will fetch and merge it with any repo-level config.
+# All fields are optional; defaults are shown.
+
+# Disable ReviewBot for this repo entirely (e.g. archived repos)
+enabled: true
+
+# Minimum severity to post as an inline comment.
+# Options: critical | warning | suggestion | nitpick
+# "warning" means only critical + warning findings are posted.
+severity_threshold: warning
+
+# Glob patterns for files to skip entirely.
+# Use ** for any directory depth, * for any filename component.
+ignore_paths:
+  - "*.lock"
+  - "package-lock.json"
+  - "yarn.lock"
+  - "pnpm-lock.yaml"
+  - "dist/**"
+  - "build/**"
+  - "coverage/**"
+  - "**/*.min.js"
+  - "**/__snapshots__/**"
+  - "migrations/**"
+
+# Focus areas guide the LLM to pay extra attention to these concerns.
+# Any combination of: security, performance, error_handling, correctness, style
+focus_areas:
+  - security
+  - error_handling
+  - correctness
+
+# Maximum number of changed files to review in a single PR.
+# Files beyond this limit are skipped (noted in the review summary).
+max_files: 20
+
+# How to post findings:
+#   inline  — one GitHub review comment per finding, attached to the diff line
+#   summary — a single review comment with all findings listed
+comment_mode: inline
